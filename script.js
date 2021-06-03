@@ -30,7 +30,7 @@ vocalesConsonantes("Supercalifragilisticoespialidos") */
 pe. miFuncion("Jonathan MirCha") devolverá verdadero.*/
 
 
-const validarNombre = (nombre = undefined) =>{
+/* const validarNombre = (nombre = undefined) =>{
 
     let espacios = 0,
         caracteresRaros = 0
@@ -64,15 +64,50 @@ const validarNombre = (nombre = undefined) =>{
 
 }
 
-validarNombre("José Vicente Falcó Milla")
+validarNombre("José Vicente Ruiz García")
 validarNombre()
 validarNombre(2)
 validarNombre([])
 validarNombre("josé Vicente")
-validarNombre("José Vicente falcó Milla")
+validarNombre("José Vicente ruiz García")
 validarNombre("JoséVicente")
-validarNombre("José Vicente Falc5ó Milla")
-validarNombre("Jo%é Vicente Falcó Milla")
+validarNombre("José Vicente Rui5z García")
+validarNombre("Jo%é Vicente Ruiz García") */
 
 /*20) Programa una función que valide que un texto sea un email válido, 
 pe. miFuncion("jonmircha@gmail.com") devolverá verdadero. */
+
+const verificarEmail = (mail = undefined) =>{
+
+    if(mail === undefined) return console.info("No has introducido nada")
+
+    if(typeof mail !== "string") return console.info("Lo que has introducido no es un texto")
+
+/*     return (!/@./g.test(mail))
+        ? console.info("No es un mail válido")
+        : console.info("Mail CORRECTO") */
+    
+    mail = mail.split("")
+    
+    let arroba = 0, 
+        punto = 0
+
+    for(let i = 0; i <= mail.length; i++){
+        if(mail[i] !== "@") i++
+        if(mail[i] === "@") {
+            arroba++
+            i++
+            if(mail[i] === ".") return console.info("No puede estar la @ y el . juntos")
+            for(i=i; i <= mail.length; i++) if(mail[i] === ".") punto++            
+        }
+    }
+    if(arroba > 0 && punto > 0) return console.info("Mail CORRECTO")
+        else return console.info("Mail no válido")
+}
+
+verificarEmail()
+verificarEmail(false)
+verificarEmail("Jose")
+verificarEmail("jose@.com")
+verificarEmail("jose@gmail.com")
+verificarEmail("jose.com")
