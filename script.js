@@ -12,7 +12,7 @@ pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.*/
 
     string = string.toLowerCase()
 
-    for(position of string){
+    for(let position of string){
         if(position === "a" || position === "e" || position === "i" || position === "o" || position === "u")
             vocales++
             else consonantes++
@@ -77,15 +77,15 @@ validarNombre("Jo%é Vicente Ruiz García") */
 /*20) Programa una función que valide que un texto sea un email válido, 
 pe. miFuncion("jonmircha@gmail.com") devolverá verdadero. */
 
-const verificarEmail = (mail = undefined) =>{
+/* const verificarEmail = (mail = undefined) =>{
 
     if(mail === undefined) return console.info("No has introducido nada")
 
     if(typeof mail !== "string") return console.info("Lo que has introducido no es un texto")
 
-/*     return (!/@./g.test(mail))
-        ? console.info("No es un mail válido")
-        : console.info("Mail CORRECTO") */
+//    return (!/@./g.test(mail))
+//        ? console.info("No es un mail válido")
+//        : console.info("Mail CORRECTO")
     
     mail = mail.split("")
     
@@ -110,4 +110,4 @@ verificarEmail(false)
 verificarEmail("Jose")
 verificarEmail("jose@.com")
 verificarEmail("jose@gmail.com")
-verificarEmail("jose.com")
+verificarEmail("jose.com") */
